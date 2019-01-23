@@ -23,6 +23,7 @@
 
 // This is P4 sample source for basic_switching
 #include "netec.p4"
+#include "gf.p4"
 #include "includes/headers.p4"
 #include "includes/parser.p4"
 #include <tofino/intrinsic_metadata.p4>
@@ -297,6 +298,7 @@ control ingress {
 			/* set finish flag */
 			apply(t_finish);
 			/* calculate */
+			gf_multiply();
 			xor();
 			/* if finish, fill in data and send out */
 			if(meta.flag_finish == 1){

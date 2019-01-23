@@ -141,7 +141,7 @@ control xor {\n"""
 """,
 
 def main():
-    count = 8
+    count = 28
     data_width = 32
     header_length = 6
 
